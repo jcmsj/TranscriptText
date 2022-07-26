@@ -19,12 +19,11 @@ export class TranscriptText extends HTMLElement{
         this.index = i;
         this.attachShadow({mode:"open"})
         init(this.shadowRoot)
-        if (n) this.setTranscriptFrom(n);
+        this.setTranscript(n ? n.textContent:this.textContent)
     }
 
     connectedCallback() {
         this.setWord(this.index)
-        this.setTranscript(this.textContent)
     }
     
     attributeChangedCallback(name:string, oldValue:string, newValue:string) {
@@ -36,8 +35,10 @@ export class TranscriptText extends HTMLElement{
     setTranscript(s:string) {
         kickNextSiblings(this.shadowRoot.firstElementChild);
         this.indices = []
+        let i = 0;
         const count = (w:string) => {
-            this.indices.push(w.length)
+            i += w.length
+            this.indices.push(i)
         }
         this.shadowRoot.innerHTML += expand(s, count);
     }

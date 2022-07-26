@@ -1,4 +1,4 @@
-const cases = [' ', '-','—', undefined]
+const cases = [' ','—', undefined]
 export function expand(s:string, boundaryCallback?:(w:string)=>void) {
     const iter = s[Symbol.iterator]();
     let v:string|undefined;
