@@ -1,21 +1,16 @@
-const cases = [' ','—', undefined]
-export function expand(s:string, boundaryCallback?:(w:string)=>void) {
-    const iter = s[Symbol.iterator]();
-    let v:string|undefined;
-    let word: string|undefined = "";
-    let innerHTML = ""
-    do {
-        v = iter.next().value;
-        word += v ?? "";
+import {WordIterator} from "word-breaker"
 
-        if (word.length 
-        && cases.includes(v)) {
-            innerHTML += `<span>${word}</span>`
-            if (boundaryCallback)
-                boundaryCallback(word);
-            word = "";
-        }
-    } while(v);
+const wbc = [' ', '-', '—']
+
+export function expand(s:string, boundaryCallback?:(w:string)=>void) {
+    const iter = WordIterator(s, wbc);
+    let innerHTML = ""
+
+    for(const w of iter) {
+        innerHTML += `<span>${w}</span>`
+        if (boundaryCallback)
+            boundaryCallback(w);
+    }
 
     return innerHTML;
 }

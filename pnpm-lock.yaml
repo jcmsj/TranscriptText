@@ -3,6 +3,10 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': ^18.0.6
   ts-node: ^10.9.1
+  word-breaker: link:E:/Code/Web Dev/word-breaker
+
+dependencies:
+  word-breaker: link:E:/Code/Web Dev/word-breaker
 
 devDependencies:
   '@types/node': 18.0.6
