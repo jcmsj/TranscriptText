@@ -1,20 +1,17 @@
 {
   "name": "transcript-text",
-  "version": "0.0.2",
-  "description": "",
-  "main": "index.js",
-  "type":"module",
+  "version": "0.0.3",
+  "description": "A custom element to visually accompany a speech synthesizer. Similar to msedge's readoutspan tag",
+  "main": "./src/index.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["tts", "custom elements", "web components", "speech"],
+  "author": "Jean Carlo M. San Juan",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.0.6",
+    "@types/node": "^18.15.11",
     "ts-node": "^10.9.1"
-  },
-  "dependencies": {
-    "word-breaker": "link:E:/Code/Web Dev/word-breaker"
   }
 }
