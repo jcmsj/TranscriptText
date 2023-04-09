@@ -1,6 +1,6 @@
 {
   "name": "transcript-text",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A custom element to visually accompany a speech synthesizer. Similar to msedge's readoutspan tag",
   "main": "./src/index.ts",
   "type": "module",

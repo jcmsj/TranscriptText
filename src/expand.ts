@@ -1,11 +1,12 @@
 //Wrap the regex in () so the separators are included.
-const punctuations = /(\?|!|\.+|"|'|<|>|“|” |’ |…|,)/;
-const wordBreaks = /( |-|—)/;
+//1st () excludes some characters because
+//contracted or hyphenated words should not be split
+//2nd () breaks at word boundaries and line breaks but include it.
+const wordBreaks = /(?!['’-])(\W+|\\n|\\r)/;
 const span = (w: string) => `<span>${w}</span>`;
 export function expand(s: string, boundaryCallback?: (w: string) => void) {
     //Split by words then split by punctuations.
     const parts = s.split(wordBreaks)
-        .flatMap(w => w.split(punctuations))
     if (boundaryCallback) {
         return parts.map(p => {
             //If `p` is a word, wrap in span
