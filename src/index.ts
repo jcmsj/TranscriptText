@@ -1,6 +1,6 @@
 import {limit} from "./limit"
 import { kickNextSiblings } from "./kickNextSiblings";
-import { expand } from "./expand";
+import expand from "./expand";
 import { init } from "./template";
 export {limit};
 export { kickNextSiblings } from "./kickNextSiblings";

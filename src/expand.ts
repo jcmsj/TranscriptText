@@ -4,7 +4,7 @@
 //2nd () breaks at word boundaries and line breaks but include it.
 const wordBreaks = /(?!['’-])(\W+|\\n|\\r)/;
 const span = (w: string) => `<span>${w}</span>`;
-export function expand(s: string, boundaryCallback?: (w: string) => void) {
+export default function expand(s: string, boundaryCallback?: (w: string) => void) {
     //Split by words then split by punctuations.
     const parts = s.split(wordBreaks)
     if (boundaryCallback) {
